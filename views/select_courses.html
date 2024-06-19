@@ -1,0 +1,11 @@
+<% include layout.html %>
+<h2>Select Your Preferred Courses</h2>
+<form method="POST" id="course-form" action="/select_courses">
+    <% courses.forEach(course => { %>
+        <div>
+            <input type="checkbox" name="courses" value="<%= course.id %>" id="course-<%= course.id %>">
+            <label for="course-<%= course.id %>"><%= course.course_name %></label>
+        </div>
+    <% }); %>
+    <button type="submit">Submit</button>
+</form>
